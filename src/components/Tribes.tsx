@@ -21,13 +21,14 @@ export default function Tribes() {
             &quot;team&quot; tab.
           </p>
         </Reveal>
-        <div className="chips">
+        <ol className="tribe-index">
           {TRIBES.map((tribe, i) => (
-            <Reveal className="chip" key={tribe} delay={i * 0.06} y={10}>
+            <Reveal as="li" key={tribe} delay={i * 0.05} y={10}>
+              <span className="idx">{String(i + 1).padStart(2, "0")}</span>
               {tribe}
             </Reveal>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
+import { CloseIcon, MenuIcon } from "./icons";
 
 const LINKS = [
   { href: "#how", label: "How it works" },
@@ -30,11 +31,11 @@ export default function Nav() {
       <div className="container nav">
         <a href="#" className="wordmark">
           <span className="wordmark-mark">
-            <Image src="/nackl-mark.png" alt="" width={30} height={30} priority />
+            <Image src="/nackl-mark.png" alt="" width={28} height={28} priority />
           </span>
           <span className="wordmark-text">
             <span className="name">nackl</span>
-            <span className="tagline">DARE TO CONQUER</span>
+            <span className="tagline">Dare to conquer</span>
           </span>
         </a>
         <nav className="nav-links">
@@ -45,23 +46,17 @@ export default function Nav() {
           ))}
         </nav>
         <div className="nav-cta">
-          <motion.button
+          <button
             className="nav-toggle"
-            aria-label="Menu"
+            aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            whileTap={{ scale: 0.9 }}
           >
-            {open ? "✕" : "☰"}
-          </motion.button>
-          <motion.a
-            href="#waitlist"
-            className="btn btn-lime"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-          >
+            {open ? <CloseIcon /> : <MenuIcon />}
+          </button>
+          <a href="#waitlist" className="btn btn-primary">
             Join waitlist
-          </motion.a>
+          </a>
         </div>
         <AnimatePresence>
           {open && (

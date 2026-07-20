@@ -1,4 +1,3 @@
-import TiltCard from "./TiltCard";
 import Reveal from "./Reveal";
 import {
   AiIcon,
@@ -12,68 +11,51 @@ import {
 } from "./icons";
 import type { ReactNode } from "react";
 
-const FEATURES: {
-  span: "c-span2" | "c-span1";
-  accent?: boolean;
-  dark?: boolean;
-  icon: ReactNode;
-  title: string;
-  body: string;
-  tag: string;
-}[] = [
+const LEAD = {
+  icon: <TribesIcon />,
+  title: "Tribes",
+  body: "Group hubs with invite/approval membership, polls, a shared proof feed, and full chat — reactions, pin, reply, forward, mute. More like a community hub than a generic team tab.",
+  tag: "Community · Chat · Shared dares",
+};
+
+const SUPPORTING: { icon: ReactNode; title: string; body: string; tag: string }[] = [
   {
-    span: "c-span2",
-    accent: true,
-    icon: <TribesIcon />,
-    title: "Tribes",
-    body: "Group hubs with invite/approval membership, polls, a shared proof feed, and full chat — reactions, pin, reply, forward, mute.",
-    tag: "Community · Chat · Shared dares",
-  },
-  {
-    span: "c-span1",
     icon: <RadarIcon />,
     title: "Radar",
     body: "Find nearby Dares, plus a full DM system for coordinating with people around you.",
     tag: "Location · Messaging",
   },
   {
-    span: "c-span1",
     icon: <HypeIcon />,
     title: "HypeShouts",
     body: "Cheer someone on, or send a HypeKnock to poke a friend into finally doing the Dare.",
     tag: "Reactions · Pokes",
   },
   {
-    span: "c-span2",
     icon: <FlicksIcon />,
     title: "Flicks & Nacks",
-    body: "Lightweight, story-style camera posts for the in-between moments: OneShot, Gratitude, MicroWin, SmilesGiven.",
-    tag: "OneShot · Gratitude · MicroWin",
+    body: "Lightweight, story-style camera posts: OneShot, Gratitude, MicroWin, SmilesGiven.",
+    tag: "OneShot · Gratitude",
   },
   {
-    span: "c-span1",
     icon: <TraitsIcon />,
     title: "Traits",
     body: "Card-based personality and skill tags, earned from your actual Dare history — not a quiz.",
     tag: "Profile cards",
   },
   {
-    span: "c-span1",
     icon: <StreaksIcon />,
     title: "Streaks & Points",
     body: "Login streaks, proof streaks, and life points that track consistency, not vanity metrics.",
     tag: "Streaks · Life points",
   },
   {
-    span: "c-span1",
     icon: <HomieIcon />,
     title: "My Homie",
     body: "Pair up with a buddy for duo accountability — same Dares, mutual pressure, shared wins.",
     tag: "Duo system",
   },
   {
-    span: "c-span1",
-    dark: true,
     icon: <AiIcon />,
     title: "AI Dare Generator",
     body: "An assist service that can generate, refine, and sanity-check new Dares on demand.",
@@ -94,21 +76,23 @@ export default function Features() {
           </p>
         </Reveal>
 
-        <div className="bento">
-          {FEATURES.map((f, i) => (
-            <TiltCard
-              key={f.title}
-              className={`cell ${f.span} ${f.accent ? "accent" : ""} ${f.dark ? "dark" : ""}`}
-              delay={i * 0.07}
-              tiltMax={5}
-              hoverLift={6}
-              hoverScale={1.02}
-            >
+        <Reveal className="feature-lead">
+          {LEAD.icon}
+          <div>
+            <h3>{LEAD.title}</h3>
+            <p>{LEAD.body}</p>
+            <span className="tag-line">{LEAD.tag}</span>
+          </div>
+        </Reveal>
+
+        <div className="feature-grid">
+          {SUPPORTING.map((f, i) => (
+            <Reveal className="feature-card" key={f.title} delay={i * 0.05}>
               {f.icon}
               <h3>{f.title}</h3>
               <p>{f.body}</p>
-              <span className="tag">{f.tag}</span>
-            </TiltCard>
+              <span className="tag-line">{f.tag}</span>
+            </Reveal>
           ))}
         </div>
       </div>

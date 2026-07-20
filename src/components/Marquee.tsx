@@ -1,12 +1,12 @@
 const DARES = [
-  "HOLD PLANK 60 SEC",
-  "RUN 1KM",
-  "SNAP NATURE CHALLENGE",
-  "COLD SHOWER",
-  "NO-SCROLL MORNING",
-  "CALL YOUR MOM",
-  "10 PUSH-UPS NOW",
-  "WRITE ONE GRATITUDE",
+  "Hold plank, 60 sec",
+  "Run 1km",
+  "Snap a nature shot",
+  "Cold shower",
+  "No-scroll morning",
+  "Call your mom",
+  "10 push-ups, now",
+  "Write one gratitude",
 ];
 
 export default function Marquee() {

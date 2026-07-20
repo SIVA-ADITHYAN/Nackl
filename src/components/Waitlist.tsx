@@ -9,9 +9,9 @@ export default function Waitlist() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section className="section" id="waitlist">
+    <section className="section band-tint" id="waitlist">
       <div className="container">
-        <Reveal className="waitlist" y={32}>
+        <Reveal className="waitlist" y={24}>
           <div className="waitlist-head">
             <span className="eyebrow">Coming to iOS &amp; Android</span>
             <h2>
@@ -58,14 +58,9 @@ export default function Waitlist() {
                     Email address
                   </label>
                   <input type="email" id="wlEmail" placeholder="you@email.com" required />
-                  <motion.button
-                    type="submit"
-                    className="btn btn-lime"
-                    whileHover={{ scale: 1.04 }}
-                    whileTap={{ scale: 0.96 }}
-                  >
+                  <button type="submit" className="btn btn-primary">
                     Notify me
-                  </motion.button>
+                  </button>
                 </motion.form>
               )}
             </AnimatePresence>

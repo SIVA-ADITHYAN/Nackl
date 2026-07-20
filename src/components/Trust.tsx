@@ -17,36 +17,34 @@ const CHECKS = [
 
 export default function Trust() {
   return (
-    <section className="section" id="privacy">
+    <section className="section band-dark" id="privacy">
       <div className="container">
-        <Reveal className="trust" y={32}>
-          <div className="trust-grid">
-            <div>
-              <span className="eyebrow">Transparency dashboard</span>
-              <h2>We show our work. Most apps don&apos;t.</h2>
-              <p className="lead">
-                Verification only means something if the app doing the verifying is honest too.
-                Nackl ships a Transparency Dashboard so you can see exactly what&apos;s tracked —
-                no digging through a privacy policy required.
-              </p>
-              <ul className="checklist">
-                {CHECKS.map((c, i) => (
-                  <Reveal key={c} as="li" delay={0.1 + i * 0.1} y={12}>
-                    <CheckIcon /> {c}
-                  </Reveal>
-                ))}
-              </ul>
-            </div>
-            <div className="receipt">
-              {ROWS.map(([label, value], i) => (
-                <Reveal key={label} delay={0.1 + i * 0.08} y={8}>
-                  <div className="row">
-                    <span>{label}</span>
-                    <b>{value}</b>
-                  </div>
+        <Reveal className="trust-grid" y={24}>
+          <div>
+            <span className="eyebrow">Transparency dashboard</span>
+            <h2>We show our work. Most apps don&apos;t.</h2>
+            <p className="lead">
+              Verification only means something if the app doing the verifying is honest too.
+              Nackl ships a Transparency Dashboard so you can see exactly what&apos;s tracked —
+              no digging through a privacy policy required.
+            </p>
+            <ul className="checklist">
+              {CHECKS.map((c, i) => (
+                <Reveal key={c} as="li" delay={0.1 + i * 0.1} y={12}>
+                  <CheckIcon /> {c}
                 </Reveal>
               ))}
-            </div>
+            </ul>
+          </div>
+          <div className="receipt">
+            {ROWS.map(([label, value], i) => (
+              <Reveal key={label} delay={0.1 + i * 0.08} y={8}>
+                <div className="row">
+                  <span>{label}</span>
+                  <b>{value}</b>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </Reveal>
       </div>

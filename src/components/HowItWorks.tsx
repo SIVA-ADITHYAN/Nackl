@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Reveal from "./Reveal";
 import { CheckIcon, FlicksIcon, RadarIcon, TraitsIcon } from "./icons";
 
@@ -46,14 +43,8 @@ export default function HowItWorks() {
         <div className="steps">
           {STEPS.map((step, i) => (
             <Reveal className="step" key={step.num} delay={i * 0.1}>
-              <div className="step-head">
-                <motion.span
-                  className="num"
-                  whileHover={{ scale: 1.15, rotate: -6 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                >
-                  {step.num}
-                </motion.span>
+              <div className="step-top">
+                <span className="num">{step.num}</span>
                 <span className="step-icon">{step.icon}</span>
               </div>
               <h3>{step.title}</h3>

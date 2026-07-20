@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { CameraIcon, CheckIcon } from "./icons";
 
 const STATS = [
   { value: "100%", label: "Peer-verified proof" },
@@ -11,7 +12,13 @@ export default function Proof() {
     <section className="section" id="proof">
       <div className="container proof-mechanic">
         <Reveal className="proof-shot" y={20}>
-          <span className="sr-only">Proof photo</span>
+          <span className="proof-shot-media">
+            <CameraIcon />
+          </span>
+          <span className="proof-shot-tag">
+            <CheckIcon />
+            Validated proof
+          </span>
         </Reveal>
         <Reveal className="proof-copy" y={20} delay={0.1}>
           <span className="eyebrow">The trust mechanic</span>
