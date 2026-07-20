@@ -718,9 +718,6 @@ header.site.scrolled .nav {
 .c-span2 {
   grid-column: span 3;
 }
-.c-span3 {
-  grid-column: span 4;
-}
 .c-span1 {
   grid-column: span 2;
 }
@@ -757,7 +754,6 @@ header.site.scrolled .nav {
     grid-template-columns: repeat(2, 1fr);
   }
   .c-span2,
-  .c-span3,
   .c-span1 {
     grid-column: span 1;
   }
