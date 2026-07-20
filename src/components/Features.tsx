@@ -15,6 +15,7 @@ import type { ReactNode } from "react";
 const FEATURES: {
   span: "c-span2" | "c-span1";
   accent?: boolean;
+  dark?: boolean;
   icon: ReactNode;
   title: string;
   body: string;
@@ -72,6 +73,7 @@ const FEATURES: {
   },
   {
     span: "c-span1",
+    dark: true,
     icon: <AiIcon />,
     title: "AI Dare Generator",
     body: "An assist service that can generate, refine, and sanity-check new Dares on demand.",
@@ -96,7 +98,7 @@ export default function Features() {
           {FEATURES.map((f, i) => (
             <TiltCard
               key={f.title}
-              className={`cell ${f.span} ${f.accent ? "accent" : ""}`}
+              className={`cell ${f.span} ${f.accent ? "accent" : ""} ${f.dark ? "dark" : ""}`}
               delay={i * 0.07}
               tiltMax={5}
               hoverLift={6}

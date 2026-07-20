@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import HowItWorks from "@/components/HowItWorks";
+import Proof from "@/components/Proof";
 import Features from "@/components/Features";
 import Trust from "@/components/Trust";
 import Tribes from "@/components/Tribes";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Marquee />
         <HowItWorks />
+        <Proof />
         <Features />
         <Trust />
         <Tribes />

@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import ThemeToggle from "./ThemeToggle";
 
 const LINKS = [
   { href: "#how", label: "How it works" },
+  { href: "#proof", label: "The Proof" },
   { href: "#features", label: "Features" },
   { href: "#privacy", label: "Privacy" },
   { href: "#tribes", label: "Tribes" },
@@ -45,7 +45,6 @@ export default function Nav() {
           ))}
         </nav>
         <div className="nav-cta">
-          <ThemeToggle />
           <motion.button
             className="nav-toggle"
             aria-label="Menu"

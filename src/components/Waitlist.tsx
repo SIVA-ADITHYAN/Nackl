@@ -12,12 +12,16 @@ export default function Waitlist() {
     <section className="section" id="waitlist">
       <div className="container">
         <Reveal className="waitlist" y={32}>
-          <div>
+          <div className="waitlist-head">
             <span className="eyebrow">Coming to iOS &amp; Android</span>
-            <h2>Get on the list.</h2>
+            <h2>
+              Join the
+              <br />
+              <span className="line2">tribe.</span>
+            </h2>
             <p>No public store links yet — early access goes out in waves, straight from the team.</p>
           </div>
-          <div>
+          <div className="waitlist-body">
             <AnimatePresence mode="wait" initial={false}>
               {submitted ? (
                 <motion.div

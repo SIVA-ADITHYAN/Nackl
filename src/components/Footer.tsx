@@ -7,6 +7,7 @@ export default function Footer() {
       <span>© {year} Nackl. Dares, Tribes, HypeShouts, SlayCards.</span>
       <div className="flinks">
         <a href="#how">How it works</a>
+        <a href="#proof">The Proof</a>
         <a href="#features">Features</a>
         <a href="#privacy">Privacy</a>
       </div>

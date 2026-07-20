@@ -15,26 +15,13 @@ export const metadata: Metadata = {
     "Nackl is a social accountability app: take a Dare, post the proof, get Validated by real people. Dares, Tribes, HypeShouts, and SlayCards.",
 };
 
-const THEME_INIT = `
-(function () {
-  try {
-    var stored = localStorage.getItem('nackl-theme');
-    var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    document.documentElement.dataset.theme = theme;
-  } catch (e) {}
-})();
-`;
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
-      </head>
+    <html lang="en" className={inter.variable}>
       <body>
         <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </body>

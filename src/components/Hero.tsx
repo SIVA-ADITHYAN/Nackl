@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import TiltCard from "./TiltCard";
+import { CheckIcon, HypeIcon } from "./icons";
 
 export default function Hero() {
   return (
@@ -77,44 +78,47 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        <div className="fan-stage">
-          <TiltCard
-            className="proof-card card-a"
-            baseRotate={-9}
-            floatRange={12}
-            floatDuration={4.6}
-            delay={0.3}
+        <div className="phone-mock">
+          <motion.div
+            className="phone-frame"
+            initial={{ opacity: 0, y: 30, rotate: -3 }}
+            animate={{ opacity: 1, y: 0, rotate: 0 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="shot" />
-            <div className="cap">Plank — 60 sec</div>
-            <div className="who">@keenan · +9 validators</div>
-            <div className="stamp">
-              <span>VALIDATED</span>
+            <div className="phone-topbar">
+              <span className="pill pill-light">🔥 Day 12 streak</span>
+              <span className="pill pill-lime">Active Dare</span>
+            </div>
+            <div className="phone-shot" />
+            <div className="phone-caption">
+              <span className="dare-label">Dare</span>
+              <strong>Hold plank · 60 sec</strong>
+            </div>
+          </motion.div>
+          <TiltCard
+            className="float-badge badge-validated"
+            baseRotate={-4}
+            floatRange={10}
+            floatDuration={4.6}
+            delay={0.5}
+          >
+            <CheckIcon />
+            <div>
+              <span className="fb-title">Proof validated</span>
+              <span className="fb-sub">@sarah confirmed it&apos;s legit</span>
             </div>
           </TiltCard>
           <TiltCard
-            className="proof-card card-b"
-            baseRotate={4}
-            floatRange={14}
-            floatDuration={5.2}
-            delay={0.42}
+            className="float-badge badge-hype"
+            baseRotate={3}
+            floatRange={12}
+            floatDuration={5.4}
+            delay={0.66}
           >
-            <div className="shot" />
-            <div className="cap">Ran 1km at dawn</div>
-            <div className="who">@ria · +14 validators</div>
-          </TiltCard>
-          <TiltCard
-            className="proof-card card-c"
-            baseRotate={11}
-            floatRange={10}
-            floatDuration={4.9}
-            delay={0.54}
-          >
-            <div className="shot" />
-            <div className="cap">Snap Nature Challenge</div>
-            <div className="who">@dev · +6 validators</div>
-            <div className="stamp">
-              <span>VALIDATED</span>
+            <HypeIcon />
+            <div>
+              <span className="fb-title">Hypeshout</span>
+              <span className="fb-sub">+340 people hyped you</span>
             </div>
           </TiltCard>
         </div>

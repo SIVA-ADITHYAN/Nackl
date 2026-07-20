@@ -2,27 +2,32 @@
 
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
+import { CheckIcon, FlicksIcon, RadarIcon, TraitsIcon } from "./icons";
 
 const STEPS = [
   {
     num: "01",
     title: "Dare",
     body: "Create one, browse by category, or get sent one by a friend or your Tribe.",
+    icon: <RadarIcon />,
   },
   {
     num: "02",
     title: "Proof",
     body: "Photo, video, or text evidence. No proof, no credit — that's the whole point.",
+    icon: <FlicksIcon />,
   },
   {
     num: "03",
     title: "Validate",
     body: "Real users — not an algorithm — review the proof and confirm it's legit.",
+    icon: <CheckIcon />,
   },
   {
     num: "04",
     title: "SlayCard",
     body: "A trophy card gets minted for your feed. Certified, shareable, permanent.",
+    icon: <TraitsIcon />,
   },
 ];
 
@@ -41,13 +46,16 @@ export default function HowItWorks() {
         <div className="steps">
           {STEPS.map((step, i) => (
             <Reveal className="step" key={step.num} delay={i * 0.1}>
-              <motion.span
-                className="num"
-                whileHover={{ scale: 1.15, rotate: -6 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              >
-                {step.num}
-              </motion.span>
+              <div className="step-head">
+                <motion.span
+                  className="num"
+                  whileHover={{ scale: 1.15, rotate: -6 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                >
+                  {step.num}
+                </motion.span>
+                <span className="step-icon">{step.icon}</span>
+              </div>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
             </Reveal>
